@@ -14,7 +14,7 @@ var queuedSuccess = stream.write(Buffer.from('Awesome message'));
 
 if (queuedSuccess) {
 
-  console.log(queuedSuccess);
+  console.log('We queued our message!');
 
 } else {
 
