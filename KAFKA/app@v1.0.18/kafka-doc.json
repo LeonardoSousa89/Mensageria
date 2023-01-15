@@ -1,0 +1,10 @@
+{
+
+    "URL_kafkajs=https": "//kafka.js.org/docs/getting-started",
+    "URL_kafkajs_npm=https": "//www.npmjs.com/package/kafkajs",
+    "URL_kafka_conductor=https": "//www.conduktor.io/kafka/kafka-topics-cli-tutorial",
+    "URL_kafkajs_started=https": "//www.confluent.io/blog/getting-started-with-kafkajs/",
+    "URL_node_rdkafka": "https://www.npmjs.com/package/node-rdkafka",
+    "URL_avsc": "https://www.npmjs.com/package/avsc"
+
+}
