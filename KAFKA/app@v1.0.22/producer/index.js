@@ -2,7 +2,7 @@ const Kafka = require('node-rdkafka');
 
 var stream = Kafka.Producer.createWriteStream({
 
-    'metadata.broker.list': 'localhost:9092'
+  'metadata.broker.list': 'localhost:9092'
     
 }, {}, {
 
@@ -10,17 +10,18 @@ var stream = Kafka.Producer.createWriteStream({
 
 });
 
-var queuedSuccess = stream.write(Buffer.from('Awesome message'));
+function queuedSuccess(){
 
-if (queuedSuccess) {
+  const success = stream.write(Buffer.from('Awesome message'));
 
-  console.log('We queued our message!');
+  if (success) {
+    console.log('We queued our message!');
+  } else {
+    console.log('Too many messages in our queue already');
+  }
 
-} else {
+} 
 
-  console.log('Too many messages in our queue already');
-
-}
 
 stream.on('error', (err) => {
 
@@ -30,5 +31,5 @@ stream.on('error', (err) => {
 });
 
 setInterval(()=>{
-  queuedSuccess
+  queuedSuccess()
 },9000)
