@@ -2,4 +2,4 @@
 	--create \
 	--replication-factor \
 	--partition 1 \
-	--topic-test
+	--topic test
