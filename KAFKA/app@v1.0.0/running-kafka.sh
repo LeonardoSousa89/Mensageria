@@ -1,5 +1,4 @@
 # copie e cole no terminal
-
 git clone https://github.com/LeonardoSousa89/Mensageria.git  &&
 cd Mensageria &&
 cd KAFKA &&
