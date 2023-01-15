@@ -7,7 +7,7 @@ let sendMsg=async(knex, req, res)=>{
     await knex.insert(data)
               .from('mensagem')
               .then( _=>res.status(201).json({msg: "mensagem enviada"}))
-              .catch(_=>res.status(500).json({msg: "houve um erro com o servidor"}))
+              .catch(_=>res.status(400).json({msg: "houve um erro ao tentar enviar os dados"}))
 
 }
 
