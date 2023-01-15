@@ -19,7 +19,7 @@ consumer.on('ready', function() {
 
 }).on('data', function(data) {
 
-    console.log(data.value);
+    console.log(`received message: ${data.value}`);
 
 });
 

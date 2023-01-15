@@ -30,6 +30,6 @@ stream.on('error', (err) => {
     
 });
 
-setInterval(()=>{
+setInterval(() => {
   queuedSuccess()
 },9000)
