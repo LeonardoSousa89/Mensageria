@@ -30,3 +30,20 @@ sudo docker network connect mensageria kafka
 sudo docker run -p 8767:8767 --name consumer --network mensageria leozin89/consumer:v1 
 
 sudo docker run -p 8766:8766 --name producer --network mensageria leozin89/producer:v1 
+
+
+# voltar pastas
+cd ../../../
+cd ../../../../
+
+# derrubar container kafka
+sudo docker rm -f kafka
+
+# excluir imagens
+sudo docker image ls 
+
+sudo docker image rm -f [id*]
+
+# excluir pasta
+
+rm -rf Mensageria
