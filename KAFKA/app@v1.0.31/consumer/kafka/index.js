@@ -26,7 +26,7 @@ server.get('/').get((req, res)=>{
             
         });
         
-        return res.status(200).json(consumer)
+        return res.status(200).json(data.value)
 
 })
 
