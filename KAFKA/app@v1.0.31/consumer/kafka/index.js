@@ -21,12 +21,13 @@ server.get('/').get((req, res)=>{
             consumer.consume();
         
         }).on('data', function(data) {
-        
+
             console.log(`received message: ${data.value}`);
+            
+            return res.status(200).json(data.value)
             
         });
         
-        return res.status(200).json(data.value)
 
 })
 

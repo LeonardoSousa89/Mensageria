@@ -24,9 +24,17 @@ server.get('/').get((req, res)=>{
         const success = stream.write(Buffer.from('Awesome message'));
       
         if (success) {
+
           console.log('We queued our message!');
+          
+          res.status(200).json(success)
+
         } else {
+
           console.log('Too many messages in our queue already');
+
+          res.status(404).json({msg: 'Too many messages in our queue already'})
+
         }
       
       } 
@@ -38,7 +46,6 @@ server.get('/').get((req, res)=>{
       
       },3000)
 
-      res.status(200).json(success)
 
 })
 
