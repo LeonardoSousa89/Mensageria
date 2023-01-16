@@ -12,3 +12,19 @@ cd KAFKA &&
 cd 'app@v1.0.22' &&
 chmod a+x topic-dados.sh &&
 ./topic-dados.sh
+
+# voltar pastas
+cd ../../../
+cd ../../../../
+
+# derrubar container kafka
+sudo docker rm -f kafka
+
+# excluir imagens
+sudo docker image ls 
+
+sudo docker image rm -f [id*]
+
+# excluir pasta
+
+rm -rf Mensageria

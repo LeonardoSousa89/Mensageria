@@ -5,7 +5,7 @@ const Kafka = require('node-rdkafka');
 
 const stream = Kafka.Producer.createWriteStream({
 
-  'metadata.broker.list': 'localhost:9092'
+  'metadata.broker.list': 'kafka:9092'
 }, 
 
   {}, 
@@ -26,7 +26,7 @@ server.get('/').get((req, res)=>{
         if (success) {
 
           console.log('We queued our message!');
-          
+
           res.status(200).json(success)
 
         } else {
