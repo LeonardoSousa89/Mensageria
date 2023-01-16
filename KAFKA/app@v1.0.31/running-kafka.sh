@@ -33,6 +33,9 @@ sudo docker run -p 8766:8766 --name producer --network mensageria leozin89/produ
 
 sudo docker run -p 8767:8767 --name consumer --network mensageria leozin89/consumer:v1 
 
+# inspecionando a rede
+sudo docker network ls
+
 # voltar pastas
 cd ../../../
 cd ../../../../
