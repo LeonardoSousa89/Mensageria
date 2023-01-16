@@ -1,0 +1,2 @@
+ainda gera erro de comunicação, testar até dar certo ou abandonar, 
+este teste e eliminar esta pasta.
