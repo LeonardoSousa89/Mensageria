@@ -27,10 +27,11 @@ sudo docker network create mensageria
 
 sudo docker network connect mensageria kafka
 
-sudo docker run -p 8767:8767 --name consumer --network mensageria leozin89/consumer:v1 
+sudo docker network connect mensageria zookeeper
 
 sudo docker run -p 8766:8766 --name producer --network mensageria leozin89/producer:v1 
 
+sudo docker run -p 8767:8767 --name consumer --network mensageria leozin89/consumer:v1 
 
 # voltar pastas
 cd ../../../
