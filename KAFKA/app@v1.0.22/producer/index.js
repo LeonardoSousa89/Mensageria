@@ -1,16 +1,19 @@
 const Kafka = require('node-rdkafka');
 
-var stream = Kafka.Producer.createWriteStream({
+const stream = Kafka.Producer.createWriteStream({
 
   'metadata.broker.list': 'localhost:9092'
-    
-}, {}, {
+}, 
+
+  {}, 
+
+{
 
     topic: 'dados'
 
 });
 
-function queuedSuccess(){
+function queueMessage(){
 
   const success = stream.write(Buffer.from('Awesome message'));
 
@@ -23,13 +26,8 @@ function queuedSuccess(){
 } 
 
 
-stream.on('error', (err) => {
-
-    console.error('Error in our kafka stream');
-    console.error(err);
-    
-});
-
 setInterval(() => {
-  queuedSuccess()
-},9000)
+
+  queueMessage()
+
+},3000)

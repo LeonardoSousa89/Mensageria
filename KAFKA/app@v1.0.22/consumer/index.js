@@ -12,9 +12,7 @@ consumer.connect();
 consumer.on('ready', function() {
     
     console.log('consumer ready..')
-
     consumer.subscribe(['dados']);
-
     consumer.consume();
 
 }).on('data', function(data) {
