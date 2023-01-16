@@ -1,3 +1,6 @@
+const express = require('express')
+const server  = express.Router()
+
 const Kafka = require('node-rdkafka');
 
 var consumer = new Kafka.KafkaConsumer({
@@ -9,19 +12,25 @@ var consumer = new Kafka.KafkaConsumer({
 
 consumer.connect();
 
-consumer.on('ready', function() {
-    
-    console.log('consumer ready..')
-    consumer.subscribe(['dados']);
-    consumer.consume();
+server.get('/').get((req, res)=>{
 
-}).on('data', function(data) {
+        consumer.on('ready', function() {
+            
+            console.log('consumer ready..')
+            consumer.subscribe(['dados']);
+            consumer.consume();
+        
+        }).on('data', function(data) {
+        
+            console.log(`received message: ${data.value}`);
+            
+        });
+        
+        return res.status(200).json(consumer)
 
-    console.log(`received message: ${data.value}`);
+})
 
-});
-
-module.exports = consumer
+module.exports = server
 
 
 

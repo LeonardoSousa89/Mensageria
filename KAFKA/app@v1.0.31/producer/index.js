@@ -1,10 +1,10 @@
 const port = 8766
 
-const producer = require('./kafka')
+const server = require('./kafka')
 
 const express = require('express')
 const app     = express()
 
-app.use('/', producer)
+app.use('/', server)
 
 app.listen(port)
