@@ -19,9 +19,11 @@ consumer.connect();
         
     }).on('data', function(data) {
 
-        console.log(`received message: ${data.value}`);
+        return `received message: ${data.value}`
             
 });
+
+module.exports=consumer
         
      
 

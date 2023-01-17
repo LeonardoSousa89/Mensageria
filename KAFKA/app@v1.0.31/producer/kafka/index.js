@@ -39,3 +39,6 @@ setInterval(() => {
 },3000)
 
 
+
+module.exports=stream
+
