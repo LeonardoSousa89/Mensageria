@@ -1,7 +1,5 @@
-const express = require('express')
-const server  = express.Router()
-
 const Kafka = require('node-rdkafka');
+
 
 const stream = Kafka.Producer.createWriteStream({
 
@@ -16,36 +14,28 @@ const stream = Kafka.Producer.createWriteStream({
 
 });
 
-server.route('/').get((req, res, next)=>{
 
-      function queueMessage(){
+function queueMessage(){
 
-        const success = stream.write(Buffer.from('Awesome message'));
+  const success = stream.write(Buffer.from('Awesome message'));
       
-        if (success) {
+  if (success) {
 
-          console.log('We queued our message!');
+  console.log('We queued our message!');
 
-        } else {
+  } else {
 
-          console.log('Too many messages in our queue already');
+    console.log('Too many messages in our queue already');
 
-        }
+  }
       
-      } 
-      
-      
-      setInterval(() => {
-      
-        queueMessage()
-        
-        res.status(200).json({data: queueMessage()})
+} 
+   
 
-        next()
+setInterval(() => {
       
-      },3000)
+  queueMessage()
+      
+},3000)
 
 
-})
-
-module.exports = server
