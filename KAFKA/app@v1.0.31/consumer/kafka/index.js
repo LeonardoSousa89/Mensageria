@@ -6,7 +6,7 @@ const Kafka = require('node-rdkafka');
 var consumer = new Kafka.KafkaConsumer({
 
     'group.id': 'kafka',
-    'metadata.broker.list': 'http://172.28.0.3:9092',
+    'metadata.broker.list': 'kafka:9092',
 
 }, {});
 

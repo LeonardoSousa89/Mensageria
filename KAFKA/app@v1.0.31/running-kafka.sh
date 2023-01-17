@@ -40,8 +40,11 @@ sudo docker network ls
 cd ../../../
 cd ../../../../
 
-# derrubar container kafka
+# derrubar container kafka, zookeeper, producer e consumer
 sudo docker rm -f kafka
+sudo docker rm -f zookeeper
+sudo docker rm -f producer
+sudo docker rm -f consumer
 
 # excluir imagens
 sudo docker image ls 
