@@ -16,7 +16,7 @@ const stream = Kafka.Producer.createWriteStream({
 
 });
 
-server.get('/').get((req, res)=>{
+server.route('/').get((req, res)=>{
 
       function queueMessage(){
 

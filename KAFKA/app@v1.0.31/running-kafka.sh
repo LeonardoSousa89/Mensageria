@@ -35,6 +35,7 @@ sudo docker run --name consumer -p 8767:8767 --ip 172.28.0.6 --network mensageri
 
 # inspecionando a rede
 sudo docker network ls
+sudo docker network inspect mensageria
 
 # voltar pastas
 cd ../../../

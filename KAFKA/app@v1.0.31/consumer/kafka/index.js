@@ -12,7 +12,7 @@ var consumer = new Kafka.KafkaConsumer({
 
 consumer.connect();
 
-server.get('/').get((req, res)=>{
+server.route('/').get((req, res)=>{
 
         consumer.on('ready', function() {
             
