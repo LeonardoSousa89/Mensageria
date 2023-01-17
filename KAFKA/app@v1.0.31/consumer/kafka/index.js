@@ -1,7 +1,6 @@
 const Kafka = require('node-rdkafka');
 
-
-var consumer = new Kafka.KafkaConsumer({
+let consumer = new Kafka.KafkaConsumer({
 
     'group.id': 'kafka',
     'metadata.broker.list': 'kafka:9092',
@@ -19,7 +18,7 @@ consumer.connect();
         
     }).on('data', function(data) {
 
-        return `received message: ${data.value}`
+        console.log(`received message: ${data.value}`)
             
 });
 

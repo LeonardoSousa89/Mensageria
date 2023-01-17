@@ -21,7 +21,7 @@ function queueMessage(){
       
   if (success) {
 
-  console.log('We queued our message!');
+    console.log('We queued our message!');
 
   } else {
 
