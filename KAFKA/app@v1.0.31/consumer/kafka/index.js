@@ -1,11 +1,13 @@
 const Kafka = require('node-rdkafka');
 
+
 var consumer = new Kafka.KafkaConsumer({
 
     'group.id': 'kafka',
     'metadata.broker.list': 'kafka:9092',
 
 }, {});
+
 
 consumer.connect();
 
