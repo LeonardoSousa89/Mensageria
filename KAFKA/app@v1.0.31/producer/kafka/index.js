@@ -26,13 +26,9 @@ server.route('/').get((req, res)=>{
 
           console.log('We queued our message!');
 
-          res.status(200).json(success)
-
         } else {
 
           console.log('Too many messages in our queue already');
-
-          res.status(404).json({msg: 'Too many messages in our queue already'})
 
         }
       
@@ -42,6 +38,7 @@ server.route('/').get((req, res)=>{
       setInterval(() => {
       
         queueMessage()
+        res.status(200).json({data: queueMessage()})
       
       },3000)
 
