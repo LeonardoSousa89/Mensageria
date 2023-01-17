@@ -1,5 +1,7 @@
 const Kafka = require('node-rdkafka');
 
+let msg=''
+
 let consumer = new Kafka.KafkaConsumer({
 
     'group.id': 'kafka',
@@ -18,11 +20,12 @@ consumer.connect();
         
     }).on('data', function(data) {
 
+        msg=data.value
         console.log(`received message: ${data.value}`)
             
 });
 
-module.exports=consumer
+module.exports=msg
         
      
 
