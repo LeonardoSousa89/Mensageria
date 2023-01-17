@@ -16,7 +16,7 @@ const stream = Kafka.Producer.createWriteStream({
 
 });
 
-server.route('/').get((req, res)=>{
+server.route('/').get((req, res, next)=>{
 
       function queueMessage(){
 
@@ -38,7 +38,10 @@ server.route('/').get((req, res)=>{
       setInterval(() => {
       
         queueMessage()
+        
         res.status(200).json({data: queueMessage()})
+
+        next()
       
       },3000)
 
