@@ -5,7 +5,7 @@ const Kafka = require('node-rdkafka');
 
 const stream = Kafka.Producer.createWriteStream({
 
-  'metadata.broker.list': 'kafka:9092'
+  'metadata.broker.list': 'http://172.28.0.3:9092'
 }, 
 
   {}, 
