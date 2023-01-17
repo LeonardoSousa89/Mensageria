@@ -27,7 +27,7 @@ server.route('/').get((req, res)=>{
             
         });
         
-        res.status(200).json({data: consumer.data})
+        res.status(200).json({data: consumer})
 
 })
 
